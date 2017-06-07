@@ -16,6 +16,9 @@ function main() {
         change_image();
     }, 5000);
 
+    $(window).scroll(function(){
+        checkAnimation();
+    });
 }
 
 
@@ -28,3 +31,47 @@ function change_image() {
 
     image_num = (image_num + 1) % 3;
 }
+
+
+
+function checkAnimation() {
+    var elements = [];
+    elements.push($($('.text_bg_1')[0]));
+    elements.push($($('.text_bg_2')[0]));
+    elements.push($($('.text_bg_3')[0]));
+    elements.push($($('.text_bg_4')[0]));
+
+    elements.push($($('#pic_1')));
+    elements.push($($('#pic_2')));
+    elements.push($($('#pic_3')));
+    elements.push($($('#pic_4')));
+
+    // If the animation has already been started
+    elements.forEach(function ($elem) {
+        if (isElementInViewport($elem)) {
+            $elem.addClass('start');
+        }
+        else {
+            $elem.removeClass('start');
+        }
+    });
+
+}
+
+function isElementInViewport(elem) {
+    var $elem = $(elem);
+
+    // Get the scroll position of the page.
+    var scrollElem = ((navigator.userAgent.toLowerCase().indexOf('webkit') != -1) ? 'body' : 'html');
+    var viewportTop = $(scrollElem).scrollTop();
+    var viewportBottom = viewportTop + $(window).height();
+
+    // Get the position of the element on the page.
+    var elemTop = Math.round( $elem.offset().top );
+    var elemBottom = elemTop + $elem.height();
+
+    return ((elemTop < viewportBottom) && (elemBottom > viewportTop));
+}
+
+
+

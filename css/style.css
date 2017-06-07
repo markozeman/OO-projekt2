@@ -1,4 +1,3 @@
-
 ul {
     list-style-type: none;
     margin: 0;
@@ -9,12 +8,15 @@ ul {
 
 li#brand {
     float: left;
+    font-style: normal;
 }
 
 
 li {
     float: right;
-    font-family: Amaranth, Palanquin, Josefin Slab;
+    font-family: Lobster;
+    font-weight: bold;
+    font-style: italic;
 }
 
 
@@ -45,14 +47,56 @@ img {
     margin-bottom: 100px;
 }
 
+div img {
+    -webkit-transition: -webkit-transform 0.5s ease-out;
+    -moz-transition: -moz-transform 0.5s ease-out;
+    -o-transition: -o-transform 0.5s ease-out;
+    transition: transform 0.5s ease-out;
+}
+
+div img:hover {
+    -webkit-transform: scale(1.03);
+    -moz-transform: scale(1.03);
+    -o-transform: scale(1.03);
+    -ms-transform: scale(1.03);
+    transform: scale(1.03);
+
+    -webkit-transition: -webkit-transform 0.5s ease;
+    -moz-transition: -moz-transform 0.5s ease;
+    -o-transition: -o-transform 0.5s ease;
+    transition: transform 0.5s ease;
+}
+
+
+div img#pic_1.start, div img#pic_3.start {
+    position: relative;
+    -webkit-animation: left_move_img 2s;
+    animation: left_move_img 2s;
+}
+
+div img#pic_2.start, div img#pic_4.start {
+    position: relative;
+    -webkit-animation: right_move_img 2s;
+    animation: right_move_img 2s;
+}
+
 
 .text_bg_1, .text_bg_2, .text_bg_3, .text_bg_4 {
-    height: 626.656px;
+    height: 582.216px;
     display : flex;
     align-items : center;
     text-align: center;
 }
 
+.text_bg_1.start, .text_bg_3.start {
+    -webkit-animation: right_move 2s;
+    animation: right_move 2s;
+}
+
+.text_bg_2.start, .text_bg_4.start {
+    -webkit-animation: left_move 2s;
+    animation: left_move 2s;
+}
 
 .text_bg_1 {
     background-color: rgb(189, 170, 240);
@@ -71,11 +115,11 @@ img {
 }
 
 .first_row {
-    margin-left: -300px !important;
+    margin-left: -200px !important;
 }
 
 .second_row {
-    margin-right: -300px !important;
+    margin-right: -200px !important;
 }
 
 
@@ -88,3 +132,26 @@ h1, h4 {
 hr {
     border-color: white;
 }
+
+
+@keyframes right_move {
+    from {left: -600px;}
+    to {left: 0px;}
+}
+
+@keyframes left_move {
+    from {right: -600px;}
+    to {right: 0px;}
+}
+
+@keyframes right_move_img {
+    from {left: -1500px;}
+    to {left: 0px;}
+}
+
+@keyframes left_move_img {
+    from {right: -1500px;}
+    to {right: 0px;}
+}
+
+
