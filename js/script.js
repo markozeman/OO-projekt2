@@ -50,9 +50,11 @@ function checkAnimation() {
     elements.forEach(function ($elem) {
         if (isElementInViewport($elem)) {
             $elem.addClass('start');
+            $elem.children().children().addClass('start');
         }
         else {
             $elem.removeClass('start');
+            $elem.children().children().removeClass('start');
         }
     });
 

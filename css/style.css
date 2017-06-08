@@ -82,7 +82,7 @@ div img#pic_2.start, div img#pic_4.start {
 
 
 .text_bg_1, .text_bg_2, .text_bg_3, .text_bg_4 {
-    height: 582.216px;
+    height: 626.656px;
     display : flex;
     align-items : center;
     text-align: center;
@@ -115,11 +115,11 @@ div img#pic_2.start, div img#pic_4.start {
 }
 
 .first_row {
-    margin-left: -200px !important;
+    margin-left: -300px !important;
 }
 
 .second_row {
-    margin-right: -200px !important;
+    margin-right: -300px !important;
 }
 
 
@@ -127,7 +127,19 @@ h1, h4 {
     font-family: Lobster;
     font-style: italic;
     margin: 20px;
+    opacity: 0;
 }
+
+h1.start {
+    -webkit-animation: appear 1s 1s linear forwards;
+    animation: appear 1s 1s linear forwards;
+}
+
+h4.start {
+    -webkit-animation: appear 1s 1.5s linear forwards;
+    animation: appear 1s 1.5s linear forwards;
+}
+
 
 hr {
     border-color: white;
@@ -135,23 +147,27 @@ hr {
 
 
 @keyframes right_move {
-    from {left: -600px;}
-    to {left: 0px;}
+    from {left: -600px; opacity: 0}
+    to {left: 0px; opacity: 1}
 }
 
 @keyframes left_move {
-    from {right: -600px;}
-    to {right: 0px;}
+    from {right: -600px; opacity: 0}
+    to {right: 0px; opacity: 1}
 }
 
 @keyframes right_move_img {
-    from {left: -1500px;}
-    to {left: 0px;}
+    from {left: -1500px; opacity: 0}
+    to {left: 0px; opacity: 1}
 }
 
 @keyframes left_move_img {
-    from {right: -1500px;}
-    to {right: 0px;}
+    from {right: -1500px; opacity: 0}
+    to {right: 0px; opacity: 1}
 }
 
+@keyframes appear {
+    from {opacity: 0; transform:scale(0.2)}
+    to {opacity: 1; transform:scale(1)}
+}
 
