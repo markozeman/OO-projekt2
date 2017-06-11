@@ -1,0 +1,111 @@
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+
+li#brand {
+    float: left;
+    font-style: normal;
+}
+
+
+li {
+    float: right;
+    font-family: Lobster;
+    font-weight: bold;
+    font-style: italic;
+}
+
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: #111;
+    color: white;
+    text-decoration: none;
+    transform: scale(1.1)
+}
+
+nav {
+    background: inherit;
+}
+
+h1, h3 {
+    font-family: Lobster;
+    font-style: italic;
+    margin: 20px;
+    opacity: 0;
+}
+
+h1 {
+    position: relative;
+    -webkit-animation: appear 2s ease forwards;
+    animation: appear 2s ease forwards;
+}
+
+h3#naslov {
+    position: relative;
+    -webkit-animation: right_move_img 1s 0.5s linear forwards;
+    animation: right_move_img 1s 0.5s linear forwards;
+}
+
+h3#telefon {
+    position: relative;
+    -webkit-animation: left_move_img 1s 1.5s linear forwards;
+    animation: left_move_img 1s 1.5s linear forwards;
+}
+
+h3#mail {
+    position: relative;
+    -webkit-animation: right_move_img 1s 2.5s linear forwards;
+    animation: right_move_img 1s 2.5s linear forwards;
+}
+
+h3#fb {
+    position: relative;
+    -webkit-animation: left_move_img 1s 3.5s linear forwards;
+    animation: left_move_img 1s 3.5s linear forwards;
+}
+
+
+.jumbo {
+    background-color: #AADDF0;
+    width: 100% !important;
+    padding-bottom: 25%;
+    display : flex;
+    align-items : center;
+    text-align: center;
+    justify-content: center;
+}
+
+hr {
+    border-color: white;
+    opacity: 0;
+    -webkit-animation: appear 1s 0.5s linear forwards;
+    animation: appear 1s 0.5s linear forwards;
+}
+
+@keyframes right_move_img {
+    from {left: -1500px; opacity: 0}
+    to {left: 0px; opacity: 1}
+}
+
+@keyframes left_move_img {
+    from {right: -1500px; opacity: 0}
+    to {right: 0px; opacity: 1}
+}
+
+@keyframes appear {
+    from {opacity: 0; transform:scale(0.2)}
+    to {opacity: 1; transform:scale(1)}
+}
+
