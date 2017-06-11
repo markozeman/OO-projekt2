@@ -10,7 +10,7 @@ $(document).ready(main);
 function main() {
     var audio = new Audio('music/LockedAway.mp3');
     audio.loop = true;
-    // audio.play();
+    audio.play();
 
     window.setInterval(function(){
         change_image();

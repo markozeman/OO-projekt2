@@ -43,6 +43,7 @@ function main() {
             document.getElementsByClassName('text_1')[0].setAttribute("style", s_h);
 
             $('.text_1').show(500);
+            $('#wrap').children().children().children().addClass('start');
             $('.image_1').hide(500);
         }
     });
@@ -59,6 +60,7 @@ function main() {
             document.getElementsByClassName('text_2')[0].setAttribute("style", s_h);
 
             $('.text_2').show(500);
+            $('#wrap_2').children().children().children().addClass('start');
             $('.image_2').hide(500);
         }
     });
@@ -75,6 +77,7 @@ function main() {
             document.getElementsByClassName('text_3')[0].setAttribute("style", s_h);
 
             $('.text_3').show(500);
+            $('#wrap_3').children().children().children().addClass('start');
             $('.image_3').hide(500);
         }
     });
